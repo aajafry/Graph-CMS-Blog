@@ -1,12 +1,12 @@
 import Head from "next/head";
-import { PostsCard, Widgets } from "../components";
-import { getPosts } from "../services/index";
+import { Author, Widgets } from "../../components/index";
+import { getAuthors } from "../../services/index";
 
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>CMS Blog</title>
+        <title>CMS Blog | Author </title>
         <meta name="description" content="CMS Blog Application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -14,7 +14,7 @@ export default function Home({ posts }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post, index) => (
-            <PostsCard key={index} post={post.node} />
+            <Author key={index} author={post} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
@@ -29,7 +29,7 @@ export default function Home({ posts }) {
 
 // Fetch data at build time
 export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
+  const posts = (await getAuthors()) || [];
   return {
     props: { posts },
   };
