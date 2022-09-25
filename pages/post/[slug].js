@@ -20,17 +20,21 @@ export default function SinglePost({ post }) {
       </Head>
       <div className=" grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className=" col-span-1 lg:col-span-8">
-          <PostDetails post={post} />
-          <Author author={post.author} />
-          <CommentsFrom slug={post.slug} />
-          <Comments slug={post.slug} />
+          {post && (
+            <>
+              <PostDetails post={post} />
+              <Author author={post.author} />
+              <CommentsFrom slug={post.slug} />
+              <Comments slug={post.slug} />
+            </>
+          )}
         </div>
 
         <div className=" col-span-1 lg:col-span-4">
           <div className="relative lg:sticky lg:top-32">
             <Widgets
-              categories={post.categories.map((category) => category.slug)}
-              slug={post.slug}
+              categories={post?.categories.map((category) => category.slug)}
+              slug={post?.slug}
             />
           </div>
         </div>

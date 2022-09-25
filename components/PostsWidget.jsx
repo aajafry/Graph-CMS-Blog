@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import Image from "next/image";
 import Link from "next/link";
 import Moment from "react-moment";
 
@@ -24,10 +25,13 @@ export default function PostsWidget({ categories, slug }) {
       {posts.map((post) => (
         <div key={post.slug} className="flex items-center w-full mb-4">
           <div className="flex-none w-16">
-            <img
-              className="align-middle rounded-full h-16 w-16"
+            <Image
+              unoptimized
+              className="align-middle rounded-full "
               src={post.featuredImage.url}
               alt={post.title}
+              height="100%"
+              width="100%"
             />
           </div>
           <div className="flex-grow ml-4">

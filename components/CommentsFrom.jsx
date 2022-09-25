@@ -99,7 +99,6 @@ export default function CommentsFrom({ slug }) {
             className="inline-block bg-blue-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer capitalize transition duration-500 transform hover:translate-y-1"
             type="Submit"
             // disabled={ShowSuccessMessage}
-            // onClick={handleCommentSubmission}
           >
             Submit
           </button>

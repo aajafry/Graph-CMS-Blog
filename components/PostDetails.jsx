@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Moment from "react-moment";
@@ -7,20 +8,25 @@ import { BsCalendarDate } from "react-icons/bs";
 export default function PostDetails({ post }) {
   return (
     <div key={post.title} className=" shadow-lg rounded-lg pb-12 mb-8 lg:p-8">
-      <div className=" relative overflow-hidden shadow-md mb-6">
-        <img
+      <div className=" relative overflow-hidden shadow-md pb-80 mb-6">
+        <Image
+          unoptimized
+          className="object-top absolute h-80 w-full  object-cover shadow-lg rounded-t-lg lg:rounded-lg"
           src={post.featuredImage.url}
           alt={post.title}
-          className="object-top h-full w-full rounded-t-lg"
+          layout="fill"
         />
       </div>
       <div className=" px-4 lg:px-0">
         <div className=" flex items-center w-full mb-8">
           <div className="flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-            <img
+            <Image
+              unoptimized
+              className="rounded-full align-middle"
               src={post.author.photo.url}
               alt={post.author.name}
-              className="w-10 h-10 rounded-full align-middle"
+              width="40%"
+              height="40%"
             />
             <p className="text-gray-700 inline align-middle text-lg ml-4">
               <Link href={`/author/${post.author.slug}`}>
