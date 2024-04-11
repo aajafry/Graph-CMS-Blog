@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="container shadow-lg mx-auto px-10 mb-8 relative lg:sticky top-0 z-50">
-      <div className="  w-full py-6 inline-block">
+    <header className="container shadow-lg backdrop-blur mx-auto px-10 mb-8 relative lg:sticky top-0 z-50">
+      <div className="w-full py-6 inline-block">
         <div className="md:float-left block">
           <span className="cursor-pointer font-bold text-2xl uppercase">
             <Link href="/">cms blog</Link>
